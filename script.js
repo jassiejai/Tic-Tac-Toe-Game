@@ -24,7 +24,6 @@ function startGame(){
 }
 
 //selcet div to put item in
-document.getElementsByClassName('one')
 // also create a function? or if statement that doesnt allow to choose a div that has something in it already
 // choose an x or o
 
@@ -60,9 +59,11 @@ odd.forEach(function turns() {
 function playOne() {
     alert ("You have choosen player one")
     document.getElementsByClassName('board').addEventListener("click", (tac) => {
-        
+        return toe
+
+        console.log(tac.target)        
     } )
-    const tac = "O"
+    const toe = "O"
     
   // the function should let you choose your piece and tell you who goes first
 }
@@ -74,6 +75,13 @@ function playTwo() {
 }
 
 // click the div and apply X or O using an event listener to it would i have to first work of attaching the value to a player or 
+
+// trying to add functionality to all the divs that are created 
+function gridThyme(grid){ 
+    grid.target.value
+}
+
+
 
 
 //choose the vaule of wither x or o and add the value to the player
