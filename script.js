@@ -2,8 +2,31 @@
 let ticTac = ["","","","","","","","",""]
 
 
+// add functionality to all the divs that are created using the parent Div
+let tiles = document.querySelector('.board').addEventListener("click", (tac) => {
+   console.log(tac.target)        
+} )
+
+let tic = "X" || "x"
+let toe = "O" || "o"
 
 
+
+if (ticTac == tic || toe){
+// would this be true or would it be = "X" || "O" 
+
+     alert("Try again")   
+} 
+else if (ticTac != tic || tac ) {
+
+   //    return tiles = ticTac
+    //  console.log()
+//  how would I console.log it ?
+
+}
+else {
+    console.log("Not working")
+}
 // clicking the button starts a new game
 // add an event listener for click to run fucntion
 document.getElementById("start").addEventListener("click" , startGame)
@@ -34,6 +57,10 @@ function xAndO() {
   }  
 //click the div it enters a value of x or o
 // create button that submite you box selection
+// document.getElementsByClassName('board').addEventListener("click", (tac) => {
+//     return toe
+//    console.log(tac.target)        
+// } )
 }
 let odd = [true,false,true,false,true,false,true,false,true]
 
@@ -58,35 +85,36 @@ odd.forEach(function turns() {
 //click and item and it fills with x or o
 function playOne() {
     alert ("You have choosen player one")
-    document.getElementsByClassName('board').addEventListener("click", (tac) => {
-        return toe
-
-        console.log(tac.target)        
-    } )
-    const toe = "O"
-    
+     
   // the function should let you choose your piece and tell you who goes first
 }
 
 function playTwo() {
     alert ("You have choosen player two")
-    const tic = "X"
     
 }
 
-// click the div and apply X or O using an event listener to it would i have to first work of attaching the value to a player or 
+// click the div and apply X or O using an event listener(that attaches a value?) to it would first have to attach the value to the array. 
+// this if statement runs to makes sure a value hasnt already been added to the div.
+if (ticTac == tic || toe){
+    // would this be true or would it be = "X" || "O" 
+    
+         alert("Try again")   
+    } 
+    else if (ticTac != tic || tac ) {
+    
+       //    return tiles = ticTac
+        //  console.log()
+    //  how would I console.log it ?
+    
+    }
+    else {
+        console.log("Not working")
+    }
 
-// trying to add functionality to all the divs that are created 
-function gridThyme(grid){ 
-    grid.target.value
-}
+//choose the value of  x or o and add the value to the array
 
-
-
-
-//choose the vaule of wither x or o and add the value to the player
-
-
+// a button that restores to default
 
 
 // create a function that notifies if the game is won lost or tied if not return an alert
