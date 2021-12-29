@@ -1,3 +1,10 @@
+.head{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: auto;
+
+}
 .board{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -5,20 +12,85 @@
     height: 300px;
     text-align: center;
     margin: auto;
-    justify-content: center;
-    
 
 }
+.on:hover{
+    background-color: indianred;
+}
 
-.one{
+.on{
     background-color: aqua;
+    border-style: dotted;
+}
+.tw:hover{
+    background-color: indianred;
 }
 
-.two{
+.tw{
     
-    background-color: rgb(105, 17, 187);
+    background-color: rgb(48, 20, 75);
+    border-style: dotted;
+
 }
-.three{
+.th:hover{
+    background-color: indianred;
+}
+.th{
     
     background-color: aqua;
+    border-style: dotted;
+
+}
+.ze:hover{
+    background-color: indianred;
+}
+.ze{
+        background-color: rgb(48, 20, 75);;
+        border-style: dotted;
+
+}
+.fo:hover{
+    background-color: indianred;
+}
+.fo{
+    
+    background-color: rgb(48, 20, 75);
+    border-style: dotted;
+
+}
+.si:hover{
+    background-color: indianred;
+}
+.si{
+    
+    background-color: rgb(48, 20, 75);
+    border-style: dotted;
+
+}
+.ei:hover{
+    background-color: indianred;
+}
+.ei{
+    
+    background-color: rgb(48, 20, 75);
+    border-style: dotted;
+
+}
+.fi:hover{
+    background-color: indianred;
+}
+.fi{
+    
+    background-color: aqua;
+    border-style: dotted;
+
+}
+.se:hover{
+    background-color: indianred;
+}
+.se{
+    
+    background-color: aqua;
+    border-style: dotted;
+
 }

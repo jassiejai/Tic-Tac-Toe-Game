@@ -26,7 +26,21 @@ document.getElementById("start").addEventListener("click" , startGame)
     }
     // call function for player one and player two 
 }
+document.getElementById("restart").addEventListener("click" , restartGame)
+function restartGame() {
 
+    rePlayer = prompt ('Would you like to  start another game Y or N')
+
+//store value or prompt and convert to "O"
+   if (rePlayer =="Y") {
+       startGame()
+
+   } 
+   else {
+       alert('Have a good day')
+   }
+   // call function for player one and player two 
+}
 
 function xAndO(){
 
