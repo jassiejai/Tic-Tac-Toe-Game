@@ -2,7 +2,7 @@
 let ticTac = [null,null,null,null,null,null,null,null,null]
 let tic = "O"
 let toe = "X"
-let currentTurn = tic
+let currentTurn = toe
 
 //Start button with player selection
 document.getElementById("start").addEventListener("click" , startGame)
@@ -33,7 +33,7 @@ function restartGame() {
 
 //store value or prompt and convert to "O"
    if (rePlayer =="Y") {
-       startGame()
+      ticTac = [null,null,null,null,null,null,null,null,null]
 
    } 
    else {
@@ -46,24 +46,82 @@ function xAndO(){
 
 document.querySelector('.board').addEventListener("click", function (ta) {
       
-    boxNum = ta.target.textContent        
+//     boxNum = ta.target.textContent        
 
-    if(!ticTac[boxNum]){
-        ticTac[boxNum] = currentTurn
-        currentTurn = currentTurn == tic ? toe : tic
-        //trying to add functions as the null paramater
-        ta.target.innertext = currentTurn
-        //how do I add the x or o to reflect on the grid
+//     if(!ticTac[boxNum]){
+//         ticTac[boxNum] = currentTurn
+//         // currentTurn = currentTurn == tic ? toe : tic
+//         //trying to add functions as the null paramater
+//         ta.target.innerText = currentTurn
+//         console.log(currentTurn)
+//         //how do I add the x or o to reflect on the grid
         
-    }
-    else{
-      console.log("Problem")
-    }
+//     }
+//     else{
+//       console.log("Problem")
+//     }
     
-    console.log(ticTac)
+//     console.log(ticTac)
+// }
+// )}
+boxNum = ta.target.textContent        
+
+if(currentTurn === "O"){
+    currentTurn = "X"
+    ta.target.innerText = "X"
+    console.log(currentTurn)
+    ticTac.splice(boxNum, 1, "X")  
+
+    // // currentTurn = currentTurn == tic ? toe : tic
+    // //trying to add functions as the null paramater
+    // ta.target.innerText = currentTurn
+    // console.log(currentTurn)
+    //how do I add the x or o to reflect on the grid
+    
+}
+else if (currentTurn === "X"){
+  currentTurn = "O"
+  ta.target.innerText = "O"
+  console.log(currentTurn)
+  ticTac.splice(boxNum, 1, "O")  
+
+}
+else {
+    alert("try again")
+}
+console.log(ticTac)
 }
 )}
 
+let wins = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+//interate over array to check the winnig arrays if statement firstsqure == second && second ==thirt
+//then check it all goes into for loop
+function win(ticTac){
+    for(let i =0; i <= ticTac.length; i++){
+    let whoWon = wins[[i]]
+   const whoWon1 = wins[0]
+   const whoWon2 = wins[1]
+   const whoWon3 = wins[2]
+
+
+if (whoWon1 == whoWon2 && whoWon2 == whoWon3){
+    alert ("You have won")
+}
+else {
+    alert ("noone has won")
+
+
+}}}
 
 // let tiles = function (ta) {
 //     //    console.log(tac.target.textContent) 
@@ -138,7 +196,7 @@ function playOne() {
 // also create a function? or if statement that doesnt allow to choose a div that has something in it already
 // choose an x or o
 
-function xAnjdO() {
+// function xAnjdO() {
 
 //this loops the array of ticTac with the turns.
 //   for(let t = 0; t< ticTac.length; t++){
@@ -150,7 +208,7 @@ function xAnjdO() {
 //     return toe
 //    console.log(tac.target)        
 // } )
-}
+// }
 
 // xAndO()
 // let odd = [true,false,true,false,true,false,true,false,true]
@@ -170,6 +228,8 @@ function xAnjdO() {
 //    }
 //   }  // if xAndO is x then the next turn you should expect O it shouldnt allow for the x to be choosen 
 // }
+
+// true and false using !
 
 
 //create a function for each player
@@ -242,9 +302,34 @@ function playTwo() {
 // create a function that notifies if the game is won lost or tied if not return an alert
 //if not equal to 3 show this if = to 3 show this else player ones turn play twos turn
 //end game functionalluty until the new game button is hit but doesnt refresh the page 
+// let wins = [
+//     [0, 1, 2],
+//     [3, 4, 5],
+//     [6, 7, 8],
+//     [0, 3, 6],
+//     [1, 4, 7],
+//     [2, 5, 8],
+//     [0, 4, 8],
+//     [2, 4, 6]
+// ];
+
+// //interate over array to check the winnig arrays if statement firstsqure == second && second ==thirt
+// //then check it all goes into for loop
+// function win(ticTac){
+//     for(let i =0; i <= ticTac.length; i++){
+//     let whoWon = wins[[i]]
+//    const whoWon1 = wins[0]
+//    const whoWon2 = wins[1]
+//    const whoWon3 = wins[2]
 
 
+// if (whoWon1 == whoWon2 && whoWon2 == whoWon3){
+//     alert ("You have won")
+// }
+// else if (playTwo == wins){
+//     alert ("player one has won")
 
 
+// }}}
 // create a grid div with 9 other divs to the create a grid with. can used the numbered div to be able to run possible outcomes of three in a row
 // add the grid styling in the parent div using 1fr with spaces then finish the styling (create a border and apply it to two sides)
