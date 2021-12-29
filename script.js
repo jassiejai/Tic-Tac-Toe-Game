@@ -1,60 +1,135 @@
 //created an array to hold the vaule of X or O
-let ticTac = ["","","","","","","","",""]
+let ticTac = [null,null,null,null,null,null,null,null,null]
+let tic = "O"
+let toe = "X"
+let currentTurn = tic
 
-
-// add functionality to all the divs that are created using the parent Div
-let tiles = document.querySelector('.board').addEventListener("click", (tac) => {
-   console.log(tac.target)        
-} )
-
-let tic = "X" || "x"
-let toe = "O" || "o"
-
-
-
-if (ticTac == tic || toe){
-// would this be true or would it be = "X" || "O" 
-
-     alert("Try again")   
-} 
-else if (ticTac != tic || tac ) {
-
-   //    return tiles = ticTac
-    //  console.log()
-//  how would I console.log it ?
-
-}
-else {
-    console.log("Not working")
-}
-// clicking the button starts a new game
-// add an event listener for click to run fucntion
+//Start button with player selection
 document.getElementById("start").addEventListener("click" , startGame)
 
-function startGame(){
-    let stPlayer = prompt ('Choose X or O')
+ function startGame() {
 
-    if (stPlayer == 'O') {
-        playOne()
-    } else if (stPlayer == 'X') {
-        playTwo()
+     stPlayer = prompt ('Choose X or O')
+
+//store value or prompt and convert to "O"
+    if (stPlayer =="O") {
+        alert("You are player one")
+        xAndO()
+    } else if (stPlayer == "X") {
+        alert("You are player two. Player one will got first")
+        xAndO()
+        
     }
     else {
         alert('Try again')
-        
+        startGame()
     }
     // call function for player one and player two 
 }
+
+
+function xAndO(){
+
+document.querySelector('.board').addEventListener("click", function (ta) {
+      
+    boxNum = ta.target.textContent        
+
+    if(!ticTac[boxNum]){
+        ticTac[boxNum] = currentTurn
+        currentTurn = currentTurn == tic ? toe : tic
+        //trying to add functions as the null paramater
+        ta.target.innertext = currentTurn
+        //how do I add the x or o to reflect on the grid
+        
+    }
+    else{
+      console.log("Problem")
+    }
+    
+    console.log(ticTac)
+}
+)}
+
+
+// let tiles = function (ta) {
+//     //    console.log(tac.target.textContent) 
+//         boxNum = ta.target.textContent
+//        //use this to replace items in the array  
+        
+
+//         if(!ticTac[boxNum]){
+//             ticTac[boxNum] = currentTurn
+//             ta.target.innertext = currentTurn
+//             currentTurn = currentTurn == playOne() ? playTwo() : playOne()
+//         }
+// }
+
+
+
+
+function playOne() {
+    // Alerts the player whos turn it is 
+    alert ("Player one it is your turn")
+     // add functionality to all the divs that are created using the parent Div
+
+          tic = document.querySelector('.board').addEventListener("click", (tac) => {
+        //    console.log(tac.target.textContent) 
+            chosenBoxNumber = parseInt(tac.target.textContent)
+           //use this to replace items in the array  
+             ticTac.splice(chosenBoxNumber, 1, "O")  
+             console.log(ticTac)
+    
+         })
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+// 
+//onclick causes div value to change
+
+// let tic = "X" 
+// let toe = "O"
+
+
+
+// if (ticTac == tic || toe){
+// // would this be true or would it be = "X" || "O" 
+
+//      alert("Try again")   
+// } 
+// else if (ticTac != tic || tac ) {
+
+//    //    return tiles = ticTac
+//     //  console.log()
+// //  how would I console.log it ?
+
+// }
+// else {
+//     console.log("Not working")
+// }
+// clicking the button starts a new game
+// add an event listener for click to run fucntion
+
 
 //selcet div to put item in
 // also create a function? or if statement that doesnt allow to choose a div that has something in it already
 // choose an x or o
 
-function xAndO() {
+function xAnjdO() {
+
 //this loops the array of ticTac with the turns.
-  for(let t = 0; t< ticTac.length; t++){
-      turns([t])
-  }  
+//   for(let t = 0; t< ticTac.length; t++){
+//       turns([t])
+//   }  
 //click the div it enters a value of x or o
 // create button that submite you box selection
 // document.getElementsByClassName('board').addEventListener("click", (tac) => {
@@ -62,55 +137,88 @@ function xAndO() {
 //    console.log(tac.target)        
 // } )
 }
-let odd = [true,false,true,false,true,false,true,false,true]
 
-// create a fucntion that toogles between two characters depending on the first choosen character
-odd.forEach(function turns() {
-    //pulls every odd index item and loops it
- for (let turn of odd){
-   if (turn == true){
-       return "playOne"
-   }
-   else if (turn == false){
-       return "playTwo"
-   }
-   else {
-       break
-   }
-  }  // if xAndO is x then the next turn you should expect O it shouldnt allow for the x to be choosen 
-})
+// xAndO()
+// let odd = [true,false,true,false,true,false,true,false,true]
+
+// // create a fucntion that toogles between two characters depending on the first choosen character
+// function turns() {
+//     //pulls every odd index item and loops it
+//  for (let turn of ticTac){
+//    if (turn == tic){
+//        return playOne()
+//    }
+//    else if (turn == toe ){
+//        return playTwo()
+//    }
+//    else {
+//        break
+//    }
+//   }  // if xAndO is x then the next turn you should expect O it shouldnt allow for the x to be choosen 
+// }
 
 
 //create a function for each player
 //click and item and it fills with x or o
-function playOne() {
-    alert ("You have choosen player one")
-     
-  // the function should let you choose your piece and tell you who goes first
-}
+// function playOne() {
+// // function that 
+// alert ("You have choosen player one")
+//  // add functionality to all the divs that are created using the parent Div
+//  if(stPlayer == "O"){
+//       tic = document.querySelector('.board').addEventListener("click", (tac) => {
+//     //    console.log(tac.target.textContent) 
+//         choosenBoxNumber = parseInt(tac.target.textContent)
+//        //use this to replace items in the array  
+//          ticTac.splice(choosenBoxNumber, 1, "O")  
+//          console.log(ticTac)
+//         return "X"
+
+//      })}
+//  else{
+//      playTwo()
+//  }
+//     //     if(playOne()){
+        
+//     //   }
+//     //   else if (playTwo()) {
+//     //     ticTac.splice(choosenBoxNumber, 1, "O") 
+//     //   }
+//     //   else {
+//     //       return turns()
+//     //   }
+       
+//   // the function should let you choose your piece and tell you who goes first
+// }
 
 function playTwo() {
-    alert ("You have choosen player two")
-    
-}
+    alert ("Player Two it is your turn")
+    toe = document.querySelector('.board').addEventListener("click", (tace) => {
+        //    console.log(tac.target.textContent) 
+            choosenBoxNumber = parseInt(tace.target.textContent)
+           //use this to replace items in the array  
+             ticTac.splice(choosenBoxNumber, 1, "X")  
+             console.log(ticTac)
+           
+        })}
+ 
 
 // click the div and apply X or O using an event listener(that attaches a value?) to it would first have to attach the value to the array. 
 // this if statement runs to makes sure a value hasnt already been added to the div.
-if (ticTac == tic || toe){
-    // would this be true or would it be = "X" || "O" 
+// if (ticTac == tic || toe){
+//     // would this be true or would it be = "X" || "O" 
     
-         alert("Try again")   
-    } 
-    else if (ticTac != tic || tac ) {
+//          alert("Try again")   
+//     } 
+//     else if (ticTac != tic || tac ) {
     
-       //    return tiles = ticTac
-        //  console.log()
-    //  how would I console.log it ?
+//        //    return tiles = ticTac
+//         //  console.log()
+//     //  how would I console.log it ?
     
-    }
-    else {
-        console.log("Not working")
-    }
+//     }
+//     else {
+//         console.log("Not working")
+//     }
 
 //choose the value of  x or o and add the value to the array
 
