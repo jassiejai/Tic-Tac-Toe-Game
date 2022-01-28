@@ -28,7 +28,7 @@ The Final Result
 ![Pastel-Tic-Tac-Toe](https://user-images.githubusercontent.com/44285465/151492446-69281ac7-9212-43c8-849b-9aca19a3869e.png)
 
 
-Click URL to play the game:
+Click URL to play the game:https://epic-shaw-4909ec.netlify.app/
 
 
 Technologies used 
